@@ -1,12 +1,14 @@
 import * as jwt from 'jsonwebtoken'
 
+const secret: string = 'secret'
+
 export default {
-  createToken (uuid) {
-    return jwt.sign({ uuid }, 'secret', {
-      expiresIn: 1000
+  createToken (uuid: string) {
+    return jwt.sign({ uuid }, secret, {
+      expiresIn: '30d'
     })
   },
-  verifyToken (token) {
-    return jwt.verify(token, 'secret')
+  verifyToken (token: string) {
+    return jwt.verify(token, secret)
   }
 }
