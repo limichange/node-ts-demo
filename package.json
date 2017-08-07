@@ -19,10 +19,12 @@
   "homepage": "https://github.com/limichange/node-ts-demo#readme",
   "devDependencies": {
     "@types/koa": "^2.0.39",
+    "@types/koa-router": "^7.0.22",
     "ts-node": "^3.3.0",
     "typescript": "^2.4.2"
   },
   "dependencies": {
-    "koa": "^2.3.0"
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1"
   }
 }
