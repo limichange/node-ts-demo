@@ -21,10 +21,10 @@
   "devDependencies": {
     "@types/koa": "2.0.39",
     "@types/koa-router": "7.0.22",
+    "@types/jsonwebtoken": "7.2.3",
     "@types/sequelize": "4.0.67"
   },
   "dependencies": {
-    "@types/jsonwebtoken": "^7.2.3",
     "crypto": "0.0.3",
     "jsonwebtoken": "7.4.2",
     "koa": "2.3.0",
