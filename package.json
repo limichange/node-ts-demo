@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/ts-node ./index.ts",
-    "dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+    "dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+    "eslint:fix": "eslint --fix src"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,16 @@
   },
   "homepage": "https://github.com/limichange/node-ts-demo#readme",
   "devDependencies": {
+    "@types/jsonwebtoken": "7.2.3",
     "@types/koa": "2.0.39",
     "@types/koa-router": "7.0.22",
-    "@types/jsonwebtoken": "7.2.3",
-    "@types/sequelize": "4.0.67"
+    "@types/sequelize": "4.0.67",
+    "eslint": "4.4.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.1.1",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1"
   },
   "dependencies": {
     "crypto": "0.0.3",
