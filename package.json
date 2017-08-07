@@ -11,20 +11,25 @@
     "type": "git",
     "url": "git+https://github.com/limichange/node-ts-demo.git"
   },
-  "author": "",
+  "author": "limichange<limichange@hotmail.com>",
   "license": "MIT",
+  "package-lock": false,
   "bugs": {
     "url": "https://github.com/limichange/node-ts-demo/issues"
   },
   "homepage": "https://github.com/limichange/node-ts-demo#readme",
   "devDependencies": {
-    "@types/koa": "^2.0.39",
-    "@types/koa-router": "^7.0.22",
-    "ts-node": "^3.3.0",
-    "typescript": "^2.4.2"
+    "@types/koa": "2.0.39",
+    "@types/koa-router": "7.0.22",
+    "@types/sequelize": "4.0.67"
   },
   "dependencies": {
-    "koa": "^2.3.0",
-    "koa-router": "^7.2.1"
+    "koa": "2.3.0",
+    "koa-router": "7.2.1",
+    "log4js": "2.3.3",
+    "mysql2": "1.4.0",
+    "sequelize": "4.4.2",
+    "ts-node": "3.3.0",
+    "typescript": "2.4.2"
   }
 }
