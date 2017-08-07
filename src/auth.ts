@@ -3,8 +3,8 @@ import * as jwt from 'jsonwebtoken'
 const secret: string = 'secret'
 
 export default {
-  createToken (uuid: string) {
-    return jwt.sign({ uuid }, secret, {
+  createToken (data: Object) {
+    return jwt.sign(data, secret, {
       expiresIn: '30d'
     })
   },
