@@ -1,4 +1,5 @@
 import * as Router from 'koa-router'
+import * as db from '../db/models'
 import auth from '../auth'
 const router = new Router()
 
