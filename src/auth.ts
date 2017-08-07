@@ -1,14 +1,12 @@
 import * as jwt from 'jsonwebtoken'
 
-let key = jwt.sign({ uuid: 'uuid' }, 'secret', {
-  expiresIn: 1000    
-})
-
-console.log(key)
-
-jwt.verify(key, 'secret', (err, decoded) => {
-  if (err) {
-    console.error(err)
+export default {
+  createToken (uuid) {
+    return jwt.sign({ uuid }, 'secret', {
+      expiresIn: 1000
+    })
+  },
+  verifyToken (token) {
+    return jwt.verify(token, 'secret')
   }
-  console.log(decoded)
-})
+}

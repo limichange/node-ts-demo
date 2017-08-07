@@ -1,11 +1,6 @@
 import * as Koa from 'koa'
-import * as Router from "koa-router"
-const router = new Router()
+import router from './router'
 const app = new Koa()
-
-router.get('/', async ctx => {
-  ctx.body = 'Hello World'
-})
 
 app
   .use(router.routes())
