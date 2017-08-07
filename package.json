@@ -24,6 +24,9 @@
     "@types/sequelize": "4.0.67"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^7.2.3",
+    "crypto": "0.0.3",
+    "jsonwebtoken": "7.4.2",
     "koa": "2.3.0",
     "koa-router": "7.2.1",
     "log4js": "2.3.3",
