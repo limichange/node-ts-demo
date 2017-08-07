@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:live",
-    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+    "start": "./node_modules/.bin/ts-node ./index.ts",
+    "dev": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
   },
   "repository": {
     "type": "git",
