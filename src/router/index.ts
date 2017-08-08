@@ -1,16 +1,22 @@
 import * as Router from 'koa-router'
 import * as db from '../db/models'
-import auth from '../auth'
+import passport from '../auth'
 const router = new Router()
 
-router.get('/', async ctx => {
-  ctx.body = auth.createToken({
-    user: 'houyao'
-  })
+router.post('/', async ctx => {
+  return passport.authenticate('bearer', { session: false }, function (err, user, info, status) {
+    console.log(user)
+    if (user === false) {
+      ctx.body = { success: false }
+      ctx.throw(401)
+    } else {
+      ctx.body = { success: true }
+    }
+  })(ctx)
 })
 
-router.post('/auth', async ctx => {
-  console.log(ctx.request)
+router.get('/', async ctx => {
+  ctx.body = 'index'
 })
 
 export default router

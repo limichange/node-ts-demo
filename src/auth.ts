@@ -1,14 +1,15 @@
-import * as jwt from 'jsonwebtoken'
+import * as passport from 'koa-passport'
+import * as BearerStrategy from 'passport-http-bearer'
 
-const secret: string = 'secret'
-
-export default {
-  createToken (data: Object) {
-    return jwt.sign(data, secret, {
-      expiresIn: '30d'
-    })
-  },
-  verifyToken (token: string) {
-    return jwt.verify(token, secret)
+passport.use(new BearerStrategy(
+  function (token, done) {
+    // User.findOne({ token: token }, function (err, user) {
+    //   if (err) { return done(err); }
+    //   if (!user) { return done(null, false); }
+    //   return done(null, user, { scope: 'all' });
+    // });
+    return done(null, { username: 'houyao' }, { scope: 'all' })
   }
-}
+));
+
+export default passport
