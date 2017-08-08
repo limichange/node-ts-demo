@@ -3,6 +3,7 @@ import * as passport from 'koa-passport'
 import * as logger from 'koa-logger'
 import * as BodyParser from 'koa-bodyparser'
 import router from './router'
+import './auth'
 const app = new Koa()
 
 app

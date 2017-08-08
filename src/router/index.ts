@@ -9,4 +9,8 @@ router.get('/', async ctx => {
   })
 })
 
+router.post('/auth', async ctx => {
+  console.log(ctx.request)
+})
+
 export default router
