@@ -45,6 +45,7 @@
     "koa-router": "7.2.1",
     "log4js": "2.3.3",
     "mysql2": "1.4.0",
+    "napajs": "^0.1.0",
     "passport-http-bearer": "^1.0.1",
     "pm2": "2.6.1",
     "redis": "^2.8.0",
