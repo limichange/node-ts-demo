@@ -21,4 +21,7 @@ router.get('/', async ctx => {
   ctx.body = 'index'
 })
 
+router.post('/account/login')
+router.post('/account/logout')
+
 export default router
