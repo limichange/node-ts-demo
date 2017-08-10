@@ -14,7 +14,6 @@
   },
   "author": "limichange<limichange@hotmail.com>",
   "license": "MIT",
-  "package-lock": false,
   "bugs": {
     "url": "https://github.com/limichange/node-ts-demo/issues"
   },
