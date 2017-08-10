@@ -33,6 +33,7 @@
     "eslint-plugin-standard": "3.0.1"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "bcryptjs": "2.4.3",
     "crypto": "0.0.3",
     "jsonwebtoken": "7.4.2",
