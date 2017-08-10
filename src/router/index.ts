@@ -1,8 +1,8 @@
 import * as Router from 'koa-router'
 import * as db from '../db/models'
-import passport from '../auth'
+import passport from '../passport'
 
-const router = new Router({
+const router: Router = new Router({
   prefix: '/api'
 })
 
