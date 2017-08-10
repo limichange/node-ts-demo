@@ -23,5 +23,6 @@ router.get('/', async ctx => {
 
 router.post('/account/login')
 router.post('/account/logout')
+router.post('/account/register')
 
 export default router
