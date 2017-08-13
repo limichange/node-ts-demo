@@ -9,15 +9,12 @@ import passport from './passport'
 import router from './router'
 const app = new Koa()
 
-app
-  .use(errorHandler())
-  .use(compress())
-  .use(logger())
-  .use(BodyParser())
-  .use(helmet())
-  .use(passport.initialize())
-  .use(router.routes())
-  .use(router.allowedMethods())
-  .use(responseTime())
-
+app.use(errorHandler())
+app.use(compress())
+app.use(logger())
+app.use(helmet())
+app.use(BodyParser())
+app.use(passport.initialize())
+app.use(router.routes())
+app.use(responseTime())
 app.listen(3000)
