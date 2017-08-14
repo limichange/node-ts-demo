@@ -2,6 +2,7 @@ import * as Router from 'koa-router'
 import * as db from '../db/models'
 import * as BodyParser from 'koa-bodyparser'
 import passport from '../passport'
+import account from './account'
 
 const router: Router = new Router({
   prefix: '/api'
@@ -36,10 +37,6 @@ router.post('/account/logout', async ctx => {
   }
 })
 
-router.post('/account/register', async ctx => {
-  ctx.body = {
-    code: 200
-  }
-})
+router.post('/account/signUp', account.signUp)
 
 export default router

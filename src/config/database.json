@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "database_development",
+    "database": "ziliudi_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "ziliudi_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "ziliudi_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
