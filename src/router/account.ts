@@ -1,13 +1,14 @@
 const bcrypt = require('bcryptjs')
-const secret = 'blog.limichange.com'
 const dbModels = require('../db/models')
 const uuidV4 = require('uuid/v4')
 
-export default {
-  signIn(req, res, next) {
-    const { password, phone } = req.body
+const { Users } = dbModels
 
-    dbModels.Users.findOne({
+export default {
+  async signIn(ctx) {
+    const { phone, password } = ctx.request['body']
+
+    await Users.findOne({
       where: {
         phone
       }
@@ -22,14 +23,16 @@ export default {
           expires: (Date.now() + 1000 * 60 * 60 * 60)
         })
 
-        res.json({
-          token,
-          msg: 'ok'
-        })
+        ctx.body = {
+          code: 200,
+          data: {
+            token
+          }
+        }
       } else {
-        res.json({
-          msg: 'no'
-        })
+        ctx.body = {
+          code: 200
+        }
       }
     })
   },
@@ -39,14 +42,38 @@ export default {
     const salt = bcrypt.genSaltSync(10)
     const hash = bcrypt.hashSync(password, salt)
 
-    await dbModels.Users.create({
+    // check
+    if (!phone || !password) {
+      ctx.body = {
+        code: 400,
+        msg: '缺少必要的参数'
+      }
+      return
+    }
+
+    // check
+    const user = await Users.findOne({
+      where: { phone }
+    }).then(user => {
+      return user
+    })
+
+    if (user) {
+      ctx.body = {
+        code: 400,
+        msg: '这个手机号已经被注册过了'
+      }
+      return
+    }
+
+    // create
+    await Users.create({
       password: hash,
       phone,
       nickname: '请设置你的昵称',
       salt,
       uuid: uuidV4()
     }).then((res) => {
-      console.log(res)
       ctx.body = {
         code: 200
       }
@@ -57,10 +84,10 @@ export default {
     })
   },
 
-  signOut(req, res, next) {
-    const { token } = req.user
+  async signOut(ctx) {
+    const { token } = ctx.request['body']
 
-    dbModels.Accesstokens.findOne({
+    await dbModels.Accesstokens.findOne({
       where: {
         token
       }
@@ -69,9 +96,9 @@ export default {
         expires: 0
       })
     }).then(() => {
-      res.json({
-        msg: 'ok'
-      })
+      ctx.body = {
+        code: 200
+      }
     })
   }
 }

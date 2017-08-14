@@ -1,7 +1,7 @@
 import * as Router from 'koa-router'
 import * as db from '../db/models'
 import * as BodyParser from 'koa-bodyparser'
-import passport from '../passport'
+import passport from '../auth'
 import account from './account'
 
 const router: Router = new Router({
@@ -19,18 +19,7 @@ router.post('/', async ctx => {
   })(ctx)
 })
 
-router.get('/', async ctx => {
-  ctx.body = 'index'
-})
-
-router.post('/account/login', async ctx => {
-  const { username, password } = ctx.request['body']
-  ctx.body = {
-    code: 200,
-    data: { username, password }
-  }
-})
-
+router.post('/account/signIn', account.signIn)
 router.post('/account/logout', async ctx => {
   ctx.body = {
     code: 200

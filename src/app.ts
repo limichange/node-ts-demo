@@ -5,7 +5,7 @@ import * as helmet from 'koa-helmet'
 import * as compress from 'koa-compress'
 import * as errorHandler from 'koa-error'
 import * as responseTime from 'koa-response-time'
-import passport from './passport'
+import passport from './auth'
 import router from './router'
 const app = new Koa()
 
